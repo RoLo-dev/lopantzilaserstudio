@@ -1,0 +1,70 @@
+:root{
+    --font-size: 16px;
+    --brown: #814d3b;
+    --soft-gray: #eee7e7;
+    /* --cream: #F2EFE8; */
+    --cream: #fff8e8;
+    --main-font: "Inter", serif;
+    --secondary-font: "Alike", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: var(--font-size);
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-style: normal;
+    overflow-y: scroll;
+    background-color: var(--cream);
+    scroll-behavior: smooth;
+}
+h1, h2, h3{
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    font-style: normal;
+}
+h2{font-size: 2.5rem;}
+h3{font-size: 1.75rem;}
+ul{list-style: none;}
+a{
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+button{cursor: pointer;}
+a:focus, button:focus,
+form input:focus, form textarea:focus{
+    outline: 1px dashed #000;
+}
+form, input, textarea,
+label, button, a{
+    font-family: var(--main-font);
+}
+.wrapper{
+    width: 78%;
+    margin: 0 auto;
+    max-width: 1600px;
+}
+.small-wrapper{
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.bold{font-weight: bold;}
+.pics{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 921px) {
+    :root{--font-size: 14px;}
+}
+@media (max-width: 480px) {
+    :root{--font-size: 12px;}
+}
