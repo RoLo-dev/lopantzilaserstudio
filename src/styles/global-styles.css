@@ -1,11 +1,11 @@
 :root{
     --font-size: 16px;
-    --brown: #814d3b;
-    --soft-gray: #eee7e7;
-    /* --cream: #F2EFE8; */
-    --cream: #fff8e8;
+    --orange: #F76120;
+    --black: #1E1E1E;
+    --cream: #F2EFE8;
     --main-font: "Inter", serif;
     --secondary-font: "Alike", sans-serif;
+    /* --soft-gray: #eee7e7; */
 }
 
 *{
@@ -23,6 +23,7 @@ html{
     background-color: var(--cream);
     scroll-behavior: smooth;
 }
+body{color: var(--black);}
 h1, h2, h3{
     font-family: var(--secondary-font);
     font-weight: 400;
@@ -38,7 +39,7 @@ a{
 button{cursor: pointer;}
 a:focus, button:focus,
 form input:focus, form textarea:focus{
-    outline: 1px dashed #000;
+    outline: 1px dashed var(--black);
 }
 form, input, textarea,
 label, button, a{
@@ -50,7 +51,7 @@ label, button, a{
     max-width: 1600px;
 }
 .small-wrapper{
-    width: 70%;
+    width: 68%;
     margin: 0 auto;
     max-width: 1200px;
 }
