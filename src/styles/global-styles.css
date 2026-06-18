@@ -62,6 +62,14 @@ label, button, a{
     height: 100%;
     object-fit: cover;
 }
+.main-cta{
+    display: block;
+    color: #fff;
+    background-color: var(--orange);
+    border-radius: 5px;
+    max-width: 230px;
+    min-width: 190px;
+}
 
 @media (max-width: 921px) {
     :root{--font-size: 14px;}
