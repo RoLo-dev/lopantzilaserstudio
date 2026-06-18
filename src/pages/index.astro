@@ -49,7 +49,34 @@
 						<li>Personal Keepsakes</li>
 					</ul>
 				</div>
-				<div class="col image"></div>
+				<div class="col image-col"></div>
+			</div>
+
+			<p>Great for business and promotional products but not limited to personalized gifts. Adding names, dates, meaningful messages, monograms, or custom artwork. Make your brand or message stand out with professionally engraved products.</p>
+
+			<div class="services-row row2">
+				<ul>
+					<li>Birthdays</li>
+					<li>Weddings</li>
+					<li>Anniversaries</li>
+					<li>Graduations</li>
+					<li>Father's Day</li>
+					<li>Mother's Day</li>
+					<li>Retirement Gifts</li>
+				</ul>
+				<ul>
+					<li>Employee Appreciation Gifts</li>
+					<li>Client Thank You Gifts</li>
+					<li>Promotional Products</li>
+					<li>Corporate Events</li>
+					<li>Small Business Branding</li>
+					<li>Team Recognition Items</li>
+					<li>Holiday Gifts</li>
+				</ul>
+			</div>
+
+			<div class="row3">
+				.col2
 			</div>
 
 		</div>
@@ -73,7 +100,7 @@
 		align-items: center;
 	}
 	.text-container h1{
-		font-size: 4.5rem;
+		font-size: 4rem;
 		margin-bottom: 3rem;
 		text-align: center;
 	}
@@ -94,12 +121,37 @@
 		background-color: var(--black);
 		color: var(--cream);
 	}
-	#services h2{text-align: center;}
+	#services h2,
+	#services p{text-align: center;}
 	.services-row{
 		display: flex;
 		justify-content: space-between;
-		margin: 2.75rem 0;
+		margin: 4.5rem 0;
 	}
-	.services-row .col{width: 40%;}
-	.services-row .text-content h3{margin-bottom: 1rem;}
+	.services-row .col{width: 42%;}
+	.services-row .text-content{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.services-row .text-content h3{margin-bottom: 1.125rem;}
+	.services-row .text-content ul,
+	.row2 ul li{
+		list-style: circle;
+		margin-left: 18px;
+	}
+
+	.services-row .text-content ul li,
+	.row2 ul li{margin-bottom: 10px;}
+
+	.services-row .text-content ul li:last-child,
+	.row2 ul li:last-child{margin-bottom: 0;}
+	.row1{height: 400px;}
+	.row1 .image-col{
+		height: auto;
+		background-image: url(../assets/images/engraveable-withLogo.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 </style>
