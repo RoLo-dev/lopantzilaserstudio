@@ -1,13 +1,28 @@
 ---
-
+    import Logo from '../assets/images/LLS-Logo-White-MD.png';
 ---
 
 <header>
-    <div class="wrapper">
-        <a href="">
-            <img src="" alt="Lopantzi Laser Studio logo" class="pics">
+    <div class="wrapper header-container">
+        <a class="logo" href="/" title="Lopantzi Laser Studio link" aria-label="Link, redirects to homepage">
+            <img src={Logo.src} alt="Lopantzi Laser Studio logo" class="pics">
         </a>
 
+        <nav>
+            <ul>
+                <li>
+                    <a href="/#about" title="About" aria-label="About link">About</a>
+                </li>
+                <li>
+                    <a href="/#services" title="Services" aria-label="Services link">Services</a>
+                </li>
+                <li>
+                    <a href="/#faq" title="FAQ" aria-label="Frequently Asked Questions link">FAQ</a>
+                </li>
+            </ul>
+        </nav>
+
+        <a href="/#contact" title="Contact" aria-label="Contact link">CONTACT</a>
     </div>
 </header>
 
@@ -16,5 +31,23 @@
         padding: 1.5rem 0;
         background-color: var(--black);
         color: var(--cream);
+    }
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo{
+        display: block;
+        max-width: 165px;
+    }
+    nav ul{
+        display: flex;
+        gap: 0 3rem;
+
+    }
+    nav ul li a{
+        color: var(--cream);
+        text-transform: uppercase;
     }
 </style>
