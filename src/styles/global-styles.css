@@ -36,6 +36,7 @@ a{
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 }
+a:active{transform: scale(0.97);}
 button{cursor: pointer;}
 a:focus, button:focus,
 form input:focus, form textarea:focus{
@@ -57,6 +58,11 @@ p{line-height: 1.4;}
     max-width: 1200px;
 }
 .bold{font-weight: bold;}
+.section-padding{padding: 5rem 0;}
+.section-introP{
+    margin-top: 3rem;
+    text-align: center;
+}
 .pics{
     display: block;
     width: 100%;
@@ -148,29 +154,29 @@ canvas{
 .secondary-cta::before{
     content: '';
     width: 100%;
-    color: var(--cream);
     height: 0;
     border-radius: 6px;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--orange);
+    background-color: var(--black);
     transition: all 0.2s ease-in;
 }
 .secondary-cta::after{
-    color: var(--cream);
+    color: var(--black);
     width: 100%;
-    height: 100%;
+    height: 0;
     position: absolute;
-    bottom: 30%;
+    top: -10;
     left: 0;
-    transition: all 0.2s ease-in;
+    transition: all 0.3s ease-in;
 }
 .secondary-cta:hover::before{
     height: 100%;
 }
 .secondary-cta:hover::after{
     height: 100%;
+    top: 32%;
     color: var(--cream);
 }
 
