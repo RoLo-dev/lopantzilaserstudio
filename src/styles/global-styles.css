@@ -46,7 +46,7 @@ form, input, textarea,
 label, button, a{
     font-family: var(--main-font);
 }
-p{line-height: 1.4;}
+p{line-height: 1.5;}
 .wrapper{
     width: 80%;
     margin: 0 auto;
@@ -91,8 +91,8 @@ p{line-height: 1.4;}
     position: relative;
     z-index: 10;
 }
-.main-cta:after,
-.main-cta:before {
+.main-cta::after,
+.main-cta::before {
     padding: 1rem 0;
     content: '';
     position: absolute;
@@ -100,26 +100,26 @@ p{line-height: 1.4;}
     left: calc(-100% - 30px);
     height: calc(100% - 29px);
     width: calc(100% + 20px);
-    color: #fff;
+    color: var(--cream);
     border-radius: 0px;
     transform: skew(-25deg);
 }
-.main-cta:after{
+.main-cta::after{
     background: var(--cream);
     transition: left 0.8s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
     z-index: 0;
     opacity: 0.8;
 }
-.main-cta:before{
+.main-cta::before{
     background: var(--orange);
     z-index: 5;
     transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
 }
-.main-cta:hover:after{
+.main-cta:hover::after{
     left: calc(0% - 10px);
     transition: left 0.5s cubic-bezier(0.86, 0, 0.07, 1);
 }
-.main-cta:hover:before{
+.main-cta:hover::before{
     left: calc(0% - 10px);
     transition: left 0.7s cubic-bezier(0.86, 0, 0.07, 1);
 }

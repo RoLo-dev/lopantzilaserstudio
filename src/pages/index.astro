@@ -1,6 +1,7 @@
 ---
 	import Layout from '../layouts/Layout.astro';
 	import Header from '../components/Header.astro';
+	import Contact from '../components/Contact.astro';
 	import Footer from '../components/Footer.astro';
 
 	import ItemsToEngrave from '../assets/images/engraveable-withLogo.jpg'
@@ -12,14 +13,16 @@
 	<section class="hero">
 		<div class="small-wrapper hero-container">
 			<div class="text-container">
-				<h1>Custom Laser Engraving That Makes Every Item Unique</h1>
-				<p>Transform your favorite items with precision laser engraving. From tumblers and wallets to tools, gifts, and business products, Lopantzi Laser Studio helps you create personalized pieces that leave a lasting impression.</p>
+				<h1>Laser engraving, turning items to something unique and personal</h1>
+				<p>Transform your favorite items with precision laser engraving. From tumblers and wallets to tools, gifts, and business products, we help you create personalized pieces that leave a lasting impression.</p>
 
 				<div class="cta-container">
-					<a href="/#contact" class="main-cta" title="Request a quote">
+					<a href="/#contact" class="main-cta" title="Request a quote" aria-label="Request a quote link">
 						<span>Request a quote</span>
 					</a>
-					<a href="/#about" class="secondary-cta learnMore-cta" title="Learn More">Learn More</a>
+					<a href="/#about" class="secondary-cta learnMore-cta" title="Learn More" aria-label="Learn More link">
+						Learn More
+					</a>
 				</div>
 			</div>
 			<div class="showCase-images"></div>
@@ -30,7 +33,7 @@
 		<div class="small-wrapper services-container">
 			<h2>Services</h2>
 			<p class="section-introP">
-				 Whether you're creating a meaningful gift, adding professional branding, or customizing an item you already own, Lopantzi Laser Studio provides high-quality laser engraving tailored to your needs. We work with a variety of materials and products to help transform everyday items into something truly unique.
+				 Whether you're creating a meaningful gift, adding professional branding, or customizing an item you already own, we provide quality laser engraving tailored to your needs. We work with a variety of materials and products to help transform everyday items into something truly unique.
 			</p>
 
 			<div class="services-row row1">
@@ -76,12 +79,50 @@
 			</div>
 
 			<div class="row3">
-				<div class="col row3-col1"></div>
-				<div class="col row3-col2"></div>
+				<figure class="col">
+					<img src={ItemsToEngrave.src} alt="" class="pics">
+				</figure>
+				<figure class="col">
+					<img src={ItemsToEngrave.src} alt="" class="pics">
+				</figure>
 			</div>
+
+			<a href="/#contact" class="main-cta readyToStart-cta" title="Ready to Start Personalizing?" aria-label="Ready to Start Personalizing?">
+				<span>Ready to Start Personalizing?</span>
+			</a>
 
 		</div>
 	</section>
+
+	<section id="how-it-works" class="section-padding">
+		<div class="small-wrapper howItWorks-container">
+			<div class="col col1">
+				<h2>How It Works</h2>
+			</div>
+			<div class="col col2">
+				<ul>
+					<li>
+						<h4>1. Contact Us</h4>
+						<p> Tell us about your item and engraving idea.</p>
+					</li>
+					<li>
+						<h4>2. Review & Quote</h4>
+						<p>We review your project and provide pricing and turnaround information.</p>
+					</li>
+					<li>
+						<h4>3. Engraving Begins</h4>
+						<p>Your design is prepared and engraved with attention to detail.</p>
+					</li>
+					<li>
+						<h4>4. Pickup or Delivery</h4>
+						<p>Receive your finished personalized item and enjoy something uniquely yours.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<Contact />
 	
 	<Footer />
 </Layout>
@@ -126,7 +167,7 @@
 	#services p{text-align: center;}
 	.services-row{
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		margin: 4.5rem 0;
 	}
 	.services-row .col{width: 42%;}
@@ -148,13 +189,39 @@
 	.services-row .text-content ul li:last-child,
 	.row2 ul li:last-child{margin-bottom: 0;}
 	.row1, .row3{height: 400px;}
-	.row1 .image-col,
-	.row3-col1,
-	.row-col2{
+
+	.row1 .image-col{
 		height: auto;
 		background-image: url(../assets/images/engraveable-withLogo.jpg);
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
 	}
+	.row3{
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.row3 .col{width: 42%;}
+	.readyToStart-cta{
+		max-width: 300px;
+		margin: 4rem auto 0 auto;
+	}
+	.readyToStart-cta::after{content:'Ready to Start Personalizing?';}
+
+	#how-it-works{
+		background-color: var(--orange);
+		color: var(--cream);
+	}
+	.howItWorks-container{
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.howItWorks-container .col{
+		width: 42%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.howItWorks-container .col2 ul li{margin-bottom: 1.25rem;}
+	.howItWorks-container .col2 ul li:last-child{margin-bottom: 0;}
 </style>
