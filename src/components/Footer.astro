@@ -1,0 +1,39 @@
+---
+ import Logo from '../assets/images/LLS-Logo-Black-MD.png'
+---
+
+<footer class="section-padding">
+    <div class="small-wrapper">
+        <a class="logo" href="/" title="Lopantzi Laser Studio link" aria-label="Link, redirects to homepage">
+            <img src={Logo.src} alt="Lopantzi Laser Studio logo" class="pics">
+        </a>
+
+        <ul class="footer-nav-links">
+            <li>
+                <a href="/#services" title="Services" aria-label="Services link">Services</a>
+            </li>
+            <li>
+                <a href="/#about" title="About" aria-label="About link">About</a>
+            </li>
+            <li>
+                <a href="/#faq" title="FAQ" aria-label="Frequently Asked Questions link">FAQ</a>
+            </li>
+        </div>
+
+        <p class="wrapper">Copyright &copy; <span id="footer-year"></span> Lopantzi Laser Studio All Rights Reserved.</p>
+
+    </div>
+</footer>
+
+<script>
+    let currentDay = new Date();
+    let year = currentDay.getFullYear();
+    let footerYear = document.getElementById('footer-year');
+
+    function updateYear() {
+        if(footerYear != null){
+            footerYear.innerText = year.toString();
+        }
+    }
+    updateYear();
+</script>

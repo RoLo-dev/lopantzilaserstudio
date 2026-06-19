@@ -123,6 +123,96 @@
 	</section>
 
 	<Contact />
+
+	<section id="faq" class="section-padding">
+		<div class="small-wrapper faq-container">
+			<h2>FAQs</h2>
+			
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>What items can be engraved?</span>
+					<span class="faq-icon"></span>
+				</button>
+				<div class="faq-answer">
+					<p>
+						We can engrave a wide variety of items including tumblers,
+						water bottles, knives, cutting boards, coasters, leather
+						goods, keychains, ornaments, notebooks, tools, and more.
+					</p>
+				</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>What can be engraved on my item?</span>
+					<span class="faq-icon"></span>
+				</button>
+				<div class="faq-answer">
+					<p>
+						Names, logos, artwork, monograms, quotes, dates, custom
+						designs, QR codes, and more depending on the material and
+						engraving area available.
+					</p>
+				</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>Can I bring my own item?</span>
+					<span class="faq-icon"></span>
+				</button>
+				<div class="faq-answer">
+					<p>
+						Yes. Customer supplied items are welcome. We will review the
+						item beforehand to ensure it is suitable for laser engraving.
+					</p>
+				</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>How long does an order take?</span>
+					<span class="faq-icon"></span>
+				</button>
+				<div class="faq-answer">
+					<p>
+						Turnaround times vary depending on quantity and complexity,
+						but most orders are completed within 3–7 business days.
+					</p>
+				</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>Do you offer bulk or business orders?</span>
+					<span class="faq-icon"></span>
+				</button>
+				<div class="faq-answer">
+					<p>
+						Yes. We provide custom engraving for corporate gifts,
+						promotional products, employee recognition items, and event
+						giveaways.
+					</p>
+				</div>
+			</div>
+
+			<div class="faq-item">
+				<button class="faq-question">
+					<span>How do I get a quote?</span>
+					<span class="faq-icon"></span>
+				</button>
+				<div class="faq-answer">
+					<p>
+						Contact us by filling out the contact form or email, with a description of your item, quantity, and
+						engraving design. We will provide a custom quote based on your project requirements.
+					</p>
+					<a class="main-cta" href="mailto:lopantzilaserstudio@gmail.com" style="margin-bottom: 1.75rem;" title="lopantzilaserstudio@gmail.com" aria-label="Email link, lopantzilaserstudio@gmail.com">
+						<span>email</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
 	
 	<Footer />
 </Layout>
@@ -208,9 +298,11 @@
 	}
 	.readyToStart-cta::after{content:'Ready to Start Personalizing?';}
 
+	/* HOW IT WORKS SECTION */
 	#how-it-works{
 		background-color: var(--orange);
-		color: var(--cream);
+		color: #fff;
+		/* color: var(--cream); */
 	}
 	.howItWorks-container{
 		display: flex;
@@ -224,4 +316,85 @@
 	}
 	.howItWorks-container .col2 ul li{margin-bottom: 1.25rem;}
 	.howItWorks-container .col2 ul li:last-child{margin-bottom: 0;}
+
+	/* FAQ SECTION */
+	#faq{
+		background-color: var(--black);
+		color: var(--cream);
+	}
+	.faq-container h2{text-align: center;}
+	.faq-item{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	}
+	.faq-question{
+		width: 100%;
+		background: transparent;
+		border: none;
+		color: inherit;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		padding: 1.25rem 0;
+		cursor: pointer;
+		font-size: 1.25rem;
+		text-align: left;
+	}
+	.faq-icon{
+		width: 18px;
+		height: 18px;
+		border-right: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		transform: rotate(45deg);
+		transition: transform 0.3s ease;
+		flex-shrink: 0;
+	}
+	.faq-item.active .faq-icon{
+		transform: rotate(-135deg);
+	}
+	.faq-answer{
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.35s ease;
+	}
+	.faq-answer p{
+		padding: 0 0 1.5rem;
+		color: rgba(255, 255, 255, 0.8);
+		line-height: 1.7;
+	}
+
+
+	@media (max-width: 768px) {
+		.faq-question{
+			font-size: 1rem;
+			padding: 1rem 0;
+		}
+		.faq-icon{
+			width: 14px;
+			height: 14px;
+		}
+	}
 </style>
+
+<script>
+	const faqItems = document.querySelectorAll('.faq-item');
+
+	faqItems.forEach(item => {
+		const button = item.querySelector('.faq-question');
+		const answer = item.querySelector('.faq-answer');
+
+		button.addEventListener('click', () => {
+			const isOpen = item.classList.contains('active');
+
+			faqItems.forEach(faq => {
+				faq.classList.remove('active');
+				faq.querySelector('.faq-answer').style.maxHeight = null;
+			});
+
+			if (!isOpen) {
+				item.classList.add('active');
+				answer.style.maxHeight = answer.scrollHeight + 'px';
+			}
+		});
+	});
+</script>
