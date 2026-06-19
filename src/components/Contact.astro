@@ -1,5 +1,134 @@
 <section id="contact" class="section-padding">
     <div class="small-wrapper">
-        
+        <h2>Let's Create Something Unique</h2>
+        <p class="section-introP">Have a project in mind? Whether you're looking to personalize a gift, add branding to business products, or engrave a meaningful keepsake, we'd love to hear from you. Send us a message with details about your item and design ideas, and we'll get back to you as soon as possible.</p>
+
+        <div class="contactInfo-container">
+            <div class="col col1">
+                <ul>
+                    <li>
+                        <h4>Email</h4>
+                        <a href="mailto:lopantzilaserstudio@gmail.com" title="lopantzilaserstudio@gmail.com" aria-label="Email link, lopantzilaserstudio@gmail.com">lopantzilaserstudio@gmail.com</a>
+                    </li>
+                    <li>
+                        <h4>Phone</h4>
+                        <a href="tel:+9493819867" title="949381967" aria-label="Phone link, 9493819867">(949) 381-9867</a>
+                    </li>
+                    <li>
+                        <h4>Address</h4>
+                        <a href="" title="Address link, 7561 Center Ave Suite 7, Huntington Beach, Ca, 92647">
+                            7561 Center Ave Suite 7<br />
+                            Huntington Beach, CA 92647
+                        </a>
+                    </li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="col col2">
+                <form action="https://formsubmit.co/banibakery@gmail.com" enctype="multipart/form-data" method="POST" id="contact-form">
+					<input type="hidden" name="_template" value="table">
+					<input type="text" name="_honey" style="display:none">
+					<input type="hidden" id="subject" name="_subject" value="Contact form submission!">
+					<input type="hidden" name="form-name" value="contact">
+
+                    <div>
+                        <label for="name">Full name:</label>
+                        <span id="name-errorMsg" class="form-error">Enter full name</span>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone:</label>
+                        <span id="phone-errorMsg" class="form-error">Enter phone number</span>
+                        <input id="phone" type="tel" name="phone" placeholder="123-321-0909" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email:</label>
+                        <span id="email-errorMsg" class="form-error">Enter email</span>
+                        <input type="email" name="email" id="email" placeholder="youremail@email.com" required>
+                    </div>
+
+                    <div>
+                        <label for="emailConfirm">Confirm email:</label>
+                        <span id="emailConfirm-errorMsg" class="form-error"> Email does not match</span>
+                        <input type="email" name="emailConfirm" id="emailConfirm">
+                    </div>
+
+                    <div>
+                        <label for="servings">Upload Reference Image:</label>
+                        <input type="file" class="file-upload" name="attachment" accept="image/png, image/jpeg, image/jpg">
+                    </div>
+
+					<div>
+						<label for="message">Message:</label>
+						<textarea name="message"></textarea>
+					</div>
+
+					<button tabindex="0" class="submit-btn main-cta" title="Submit" aria-label="Submit button for form" >
+                    <span>SUBMIT</span>    
+                    </button>
+					<input id="validation-complete" type="submit" value="submit" style="display: none;">
+				</form>
+            </div>
+        </div>
     </div>
 </section>
+
+<style>
+    h2{text-align: center;}
+    .contactInfo-container{
+        display: flex;
+        justify-content: space-between;
+        gap: 0 3rem;
+        margin-top: 4rem;
+    }
+    .contactInfo-container .col1{width: 35%;}
+    .contactInfo-container .col2{width: 60%;}
+    form{
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem 0;
+	}
+	form label{font-weight: 500;}
+	form label, form input, form textarea{
+		width: 100%;
+		display: block;
+		color: #000;
+	}
+	form input, form textarea{
+		font-size: 1.1rem;
+		border: 0;
+		background-color: var(--soft-gray);
+	}
+	form input:active, form textarea:active,
+	form input:focus, form textarea:focus{
+		background-color: #fff;
+	}
+	form input{
+		padding: 0 5px;
+		height: 2.75rem;
+	}
+	form textarea{
+		height: 10rem;
+		padding: 5px;
+	}
+	form input[type="file"]{
+		background-color: transparent;
+		padding-top: 16px;
+	}
+	/* .formSimplify{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.formSimplify div{width: 48%;} */
+	.form-error{display: none;}
+	.submit-btn::after{content: 'SUBMIT';}
+	.contact-container .col:last-of-type{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.submit-btn{border: 0;}
+</style>

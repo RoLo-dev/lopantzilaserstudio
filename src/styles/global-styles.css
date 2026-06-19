@@ -5,7 +5,7 @@
     --cream: #F2EFE8;
     --main-font: "Inter", serif;
     --secondary-font: "Alike", sans-serif;
-    /* --soft-gray: #eee7e7; */
+    --soft-gray: #e0dad0;
 }
 
 *{
@@ -55,7 +55,7 @@ p{line-height: 1.5;}
 .small-wrapper{
     width: 65%;
     margin: 0 auto;
-    max-width: 1125px;
+    max-width: 1100px;
 }
 .bold{font-weight: bold;}
 .section-padding{padding: 5rem 0;}
