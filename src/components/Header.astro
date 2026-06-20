@@ -31,7 +31,7 @@
             <span>CONTACT</span>
         </a>
 
-        <button class="mobile-btn">
+        <button class="mobile-btn mobile-only">
             <span class="hamburger-icon"></span>
         </button>
     </div>
@@ -42,12 +42,13 @@
         padding: 1.25rem 0;
         background-color: var(--black);
         color: var(--cream);
-        position: relative;
+        /* position: relative; */
     }
     .header-container{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
     }
     .logo{
         display: block;
@@ -78,12 +79,16 @@
         }
         .desktop-only{display: none;}
 		.mobile-only{display: inline-block !important;}
+        .header-container{justify-content: center;}
 
         .mobile-btn{
-            background: transparent;
+            position: absolute;
+            top: 30px;
+            right: 0;
             border: 0;
-            padding: 1.25rem 0 1.25rem 0.9rem;
             z-index: 7;
+            background: transparent;
+            padding: 1.25rem 0 1.25rem 0.9rem;
         }
         .hamburger-icon{ display: block;position: relative; }
         .hamburger-icon,

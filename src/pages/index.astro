@@ -5,6 +5,8 @@
 	import Footer from '../components/Footer.astro';
 
 	import ItemsToEngrave from '../assets/images/engraveable-withLogo.jpg'
+	import ItemsToEngrave1 from '../assets/images/laser-item-options.jpg'
+	import ItemsToEngrave2 from '../assets/images/christmas-decor.jpg'
 ---
 
 <Layout>
@@ -80,10 +82,10 @@
 
 			<div class="row3">
 				<figure class="col">
-					<img src={ItemsToEngrave.src} alt="" class="pics">
+					<img src={ItemsToEngrave1.src} alt="" class="pics">
 				</figure>
 				<figure class="col">
-					<img src={ItemsToEngrave.src} alt="" class="pics">
+					<img src={ItemsToEngrave2.src} alt="" class="pics">
 				</figure>
 			</div>
 
@@ -218,7 +220,7 @@
 </Layout>
 <style>
 	.hero{
-		height: 900px;
+		height: 800px;
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -399,6 +401,7 @@
 		}
 	}
 	@media screen and (max-width: 480px){
+		.hero{height: 700px;}
 		.text-container h1{font-size: 3.25rem;}
 		.cta-container{
 			width: 100%;
