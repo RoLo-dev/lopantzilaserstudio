@@ -19,7 +19,7 @@
                 <li>
                     <a href="/#faq" title="FAQ" aria-label="Frequently Asked Questions link">FAQ</a>
                 </li>
-                <li>
+                <li class="">
                     <a class="main-cta mobile-only" href="/#contact" title="Contact" aria-label="Contact link">
                         <span>CONTACT</span>
                     </a>
@@ -30,6 +30,10 @@
         <a class="main-cta desktop-only" href="/#contact" title="Contact" aria-label="Contact link">
             <span>CONTACT</span>
         </a>
+
+        <button class="mobile-btn">
+            <span class="hamburger-icon"></span>
+        </button>
     </div>
 </header>
 
@@ -38,6 +42,7 @@
         padding: 1.25rem 0;
         background-color: var(--black);
         color: var(--cream);
+        position: relative;
     }
     .header-container{
         display: flex;
@@ -58,4 +63,76 @@
         text-transform: uppercase;
     }
     nav ul li a:hover{color: var(--orange);}
+
+    @media screen and (min-width: 922px){
+		.desktop-only{display: block;}
+		.mobile-only{display: none !important;}
+	}
+    @media screen and (max-width: 921px){
+        .desktop-only, .header-container nav{display: none;}
+		.mobile-only{display: inline-block !important;}
+
+        .mobile-btn{
+            background: transparent;
+            border: 0;
+            padding: 1.25rem 0 1.25rem 0.9rem;
+            z-index: 7;
+        }
+        .hamburger-icon{ display: block;position: relative; }
+        .hamburger-icon,
+        .hamburger-icon::before,
+        .hamburger-icon::after{
+            width: 2.25rem;
+            height: 2px;
+            background: var(--cream);
+            border-radius: 30px;
+            transition: transform 300ms ease-in-out, opacity 200ms linear;
+        }
+        .hamburger-icon::before,
+        .hamburger-icon::after{ content: '';position: absolute;left: 0; }
+        .hamburger-icon::before{bottom: 9px;}
+        .hamburger-icon::after{top: 9px;}
+        .animate{ background-color: transparent }
+        .animate:before{
+            bottom: 0;
+            transform: rotate(45deg)
+        }
+        .animate:after{
+            transform: rotate(135deg) translate(-7px,6px)
+        }
+
+        .show-nav{display: flex !important;}
+        nav{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background: var(--black);
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            
+        }
+        nav ul{
+            flex-direction: column;
+            gap: 3rem 0;
+        }
+    }
 </style>
+
+<script>
+    let mobileNav = document.querySelector('nav');
+    let hamburgerIcon = document.querySelector('.mobile-btn');
+    // let mobileCloseIcon = document.querySelector('.mobile-close-btn')
+
+    hamburgerIcon?.addEventListener('click', toggleNav)
+    // mobileCloseIcon?.addEventListener('click', toggleNav)
+
+    function toggleNav(){
+        mobileNav?.classList.toggle('show-nav')
+    }
+    // document.querySelector('.alert-close-btn')?.addEventListener('click', () =>{
+    //     document.querySelector('.alert-banner').style.display = 'none';
+    // })
+</script>
