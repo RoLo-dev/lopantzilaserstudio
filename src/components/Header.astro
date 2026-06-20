@@ -69,7 +69,14 @@
 		.mobile-only{display: none !important;}
 	}
     @media screen and (max-width: 921px){
-        .desktop-only, .header-container nav{display: none;}
+        header{
+            position: fixed;
+            z-index: 6;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        .desktop-only{display: none;}
 		.mobile-only{display: inline-block !important;}
 
         .mobile-btn{
@@ -101,36 +108,41 @@
             transform: rotate(135deg) translate(-7px,6px)
         }
 
-        .show-nav{display: flex !important;}
         nav{
-            position: absolute;
-            top: 0;
+            display: flex;
+            position: fixed;
+            top: 120px;
             right: 0;
-            height: 100vh;
-            width: 250px;
-            background: var(--black);
+            height: 400px;
+            width: 275px;
+            background: #1e1e1efc;
             align-items: center;
             justify-content: center;
             z-index: 5;
-            
+            transform: translate(100%, 0px);
+            transition: all 0.3s ease-in-out;
+            border-radius: 0 0 0 10px;
         }
         nav ul{
             flex-direction: column;
             gap: 3rem 0;
+        }
+        nav.show-nav{
+            transform: translateY(0px);
         }
     }
 </style>
 
 <script>
     let mobileNav = document.querySelector('nav');
-    let hamburgerIcon = document.querySelector('.mobile-btn');
-    // let mobileCloseIcon = document.querySelector('.mobile-close-btn')
+    let hamburgerBtn = document.querySelector('.mobile-btn');
+    let hamburgerIcon = document.querySelector('.hamburger-icon')
 
-    hamburgerIcon?.addEventListener('click', toggleNav)
-    // mobileCloseIcon?.addEventListener('click', toggleNav)
+    hamburgerBtn?.addEventListener('click', toggleNav)
 
     function toggleNav(){
-        mobileNav?.classList.toggle('show-nav')
+        mobileNav?.classList.toggle('show-nav');
+        hamburgerIcon?.classList.toggle('animate');
     }
     // document.querySelector('.alert-close-btn')?.addEventListener('click', () =>{
     //     document.querySelector('.alert-banner').style.display = 'none';
