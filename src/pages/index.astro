@@ -398,8 +398,13 @@
 		}
 	}
 	@media screen and (max-width: 480px){
+		.desktop-only{display: none;}
+		.mobile-only{display: block;}
 		.text-container h1{font-size: 3.25rem;}
-		.cta-container{flex-direction: column;}
+		.cta-container{
+			width: 100%;
+			flex-direction: column;
+		}
 		.cta-container a:first-of-type{margin-bottom: 2rem;}
 		.readyToStart-cta{
 			max-width: none;
