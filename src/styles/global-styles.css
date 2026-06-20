@@ -185,4 +185,12 @@ canvas{
 }
 @media (max-width: 480px) {
     :root{--font-size: 12px;}
+    .main-cta,
+    .secondary-cta{
+        padding: 1.5rem 0;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: none;
+    }
+    .small-wrapper{width: 85%;}
 }

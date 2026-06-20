@@ -2,8 +2,8 @@
  import Logo from '../assets/images/LLS-Logo-Black-MD.png'
 ---
 
-<footer class="section-padding">
-    <div class="small-wrapper">
+<footer>
+    <div class="small-wrapper footer-container">
         <a class="logo" href="/" title="Lopantzi Laser Studio link" aria-label="Link, redirects to homepage">
             <img src={Logo.src} alt="Lopantzi Laser Studio logo" class="pics">
         </a>
@@ -18,12 +18,45 @@
             <li>
                 <a href="/#faq" title="FAQ" aria-label="Frequently Asked Questions link">FAQ</a>
             </li>
-        </div>
+        </ul>
 
-        <p class="wrapper">Copyright &copy; <span id="footer-year"></span> Lopantzi Laser Studio All Rights Reserved.</p>
+        <p>Copyright &copy; <span id="footer-year"></span> Lopantzi Laser Studio All Rights Reserved.</p>
 
     </div>
 </footer>
+
+<style>
+    footer{padding: 2rem 0;}
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        display: block;
+        max-width: 375px;
+        min-width: 225px;
+        margin-bottom: 3rem;
+    }
+    .footer-nav-links{
+        display: flex;
+        gap: 0 3rem;
+        align-items: center;
+    }
+    .footer-nav-links li a{
+        color: var(--black);
+        text-transform: uppercase;
+    }
+    .footer-nav-links li a:hover{color: var(--orange);}
+    footer p{
+        margin-top: 3rem;
+        text-align: center;
+    }
+    @media screen and (max-width: 480px){
+        .logo{max-width: 275px;}
+    }
+</style>
 
 <script>
     let currentDay = new Date();
